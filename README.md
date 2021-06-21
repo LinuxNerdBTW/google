@@ -9,3 +9,6 @@ Installation is really easy You don't need to over think ?
 * sudo cp google /usr/bin/ -> remove sudo if u are super user
 * done 
 * use it from anywhere on command line .. 
+
+### Usages 
+This is small tool , so its easy to use. Dont over think .. 
