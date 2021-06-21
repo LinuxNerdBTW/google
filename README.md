@@ -12,3 +12,4 @@ Installation is really easy You don't need to over think ?
 
 ### Usages 
 This is small tool , so its easy to use. Dont over think .. 
+![Alt text](show.png"Image")
