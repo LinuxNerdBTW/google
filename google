@@ -1,0 +1,151 @@
+#!/usr/bin/python3
+import argparse
+import webbrowser
+
+# Browsers selections 
+default_browser = webbrowser.get()
+chromium_browser = webbrowser.get("chromium")
+
+# parser initialiazation 
+parser = argparse.ArgumentParser()
+
+# adding command line arguments 
+parser.add_argument("-s","--search", help="string text", required=True)
+parser.add_argument("-b","--browser", help="select browser [default = firefox]", choices=["chromium","default"])
+parser.add_argument("-e","--engine", help="select engine [none will open in url bar]", choices=["google", "bing", "duckduckgo","none"])
+parser.add_argument("-t","--type", help="select type", choices=["open","open_new","open_new_tab"], required=True)
+
+# storing value of arguments to the args variable 
+args = parser.parse_args()
+
+# fetching values form the arguments args 
+search_string = str(args.search)
+select_browser = str(args.browser)
+select_engine = str(args.engine)
+select_type = str(args.type)
+
+def run():
+    # Selecting tabs method for browser .. 
+    if select_type == "open":
+
+        # selection of the browser ... chromium or firefox or default 
+        if select_browser == "chromium":
+            
+            # selection of the search engines ... 
+            if select_engine == "google":
+                chromium_browser.open("https://www.google.com/search?q="+search_string)
+                print("Done")
+            elif select_engine == "bing":
+                chromium_browser.open("https://www.bing.com/search?q="+search_string)
+                print("Done")
+            elif select_engine == "duckduckgo":
+                chromium_browser.open("https://duckduckgo.com/?q="+search_string)
+                print("Done")
+            elif select_engine == "none":
+                chromium_browser.open(search_string)
+                print("done")
+            else:
+                chromium_browser.open("https://www.google.com/search?q="+search_string)
+                print("Opening Default")
+        elif select_browser == "default":
+            # selection of the search engines ... 
+            if select_engine == "google":
+                default_browser.open("https://www.google.com/search?q="+search_string)
+                print("Done")
+            elif select_engine == "bing":
+                default_browser.open("https://www.bing.com/search?q="+search_string)
+                print("Done")
+            elif select_engine == "duckduckgo":
+                default_browser.open("https://duckduckgo.com/?q="+search_string)
+                print("Done")
+            elif select_engine == "none":
+                default_browser.open(search_string)
+                print("done")
+            else:
+                default_browser.open("https://www.google.com/search?q="+search_string)
+                print("Opening Default")
+        else:
+            print("Browsers not detected")
+    elif select_type == "open_new":
+        # selection of the browser ... chromium or firefox or default 
+        if select_browser == "chromium":
+            
+            # selection of the search engines ... 
+            if select_engine == "google":
+                chromium_browser.open("https://www.google.com/search?q="+search_string)
+                print("Done")
+            elif select_engine == "bing":
+                chromium_browser.open("https://www.bing.com/search?q="+search_string)
+                print("Done")
+            elif select_engine == "duckduckgo":
+                chromium_browser.open("https://duckduckgo.com/?q="+search_string)
+                print("Done")
+            elif select_engine == "none":
+                chromium_browser.open(search_string)
+                print("done")
+            else:
+                chromium_browser.open("https://www.google.com/search?q="+search_string)
+                print("Opening Default")
+        elif select_browser == "firefox":
+            # selection of the search engines ... 
+            if select_engine == "google":
+                default_browser.open("https://www.google.com/search?q="+search_string)
+                print("Done")
+            elif select_engine == "bing":
+                default_browser.open("https://www.bing.com/search?q="+search_string)
+                print("Done")
+            elif select_engine == "duckduckgo":
+                default_browser.open("https://duckduckgo.com/?q="+search_string)
+                print("Done")
+            elif select_engine == "none":
+                default_browser.open(search_string)
+                print("done")
+            else:
+                default_browser.open("https://www.google.com/search?q="+search_string)
+                print("Opening Default")
+        else:
+            print("Browsers not detected")
+    elif select_type == "open_new_tab":
+        # selection of the browser ... chromium or firefox or default 
+        if select_browser == "chromium":
+            
+            # selection of the search engines ... 
+            if select_engine == "google":
+                chromium_browser.open("https://www.google.com/search?q="+search_string)
+                print("Done")
+            elif select_engine == "bing":
+                chromium_browser.open("https://www.bing.com/search?q="+search_string)
+                print("Done")
+            elif select_engine == "duckduckgo":
+                chromium_browser.open("https://duckduckgo.com/?q="+search_string)
+                print("Done")
+            elif select_engine == "none":
+                chromium_browser.open(search_string)
+                print("done")
+            else:
+                chromium_browser.open("https://www.google.com/search?q="+search_string)
+                print("Opening Default")
+        elif select_browser == "firefox":
+            # selection of the search engines ... 
+            if select_engine == "google":
+                default_browser.open("https://www.google.com/search?q="+search_string)
+                print("Done")
+            elif select_engine == "bing":
+                default_browser.open("https://www.bing.com/search?q="+search_string)
+                print("Done")
+            elif select_engine == "duckduckgo":
+                default_browser.open("https://duckduckgo.com/?q="+search_string)
+                print("Done")
+            elif select_engine == "none":
+                default_browser.open(search_string)
+                print("done")
+            else:
+                default_browser.open("https://www.google.com/search?q="+search_string)
+                print("Opening Default")
+        else:
+            print("Browsers not detected")
+
+    else:
+        print("select tabs")
+
+run()
